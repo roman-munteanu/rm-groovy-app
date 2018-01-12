@@ -1,4 +1,4 @@
-package com.munteanu.rmgroovyapp.controllers
+package com.munteanu.rmgroovyapp.controller
 
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,7 +1,23 @@
 version: '3'
 services:
+
+  mysql-dev:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: rmdb
+    ports:
+      - "3308:3306"
+
   rm-groovy-app-service:
-#    image: rm-groovy-app-image
-    image: romanmunteanu/rm-groovy-app-repo:dev
+    image: rm-groovy-app-image
+#    image: romanmunteanu/rm-groovy-app-repo:dev
     ports:
       - "8085:8085"
+    depends_on:
+      - mysql-dev
+
+  adminer-service:
+    image: adminer
+    ports:
+      - 8090:8080
