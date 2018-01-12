@@ -1,0 +1,7 @@
+version: '3'
+services:
+  rm-groovy-app-service:
+#    image: rm-groovy-app-image
+    image: romanmunteanu/rm-groovy-app-repo:dev
+    ports:
+      - "8085:8085"
